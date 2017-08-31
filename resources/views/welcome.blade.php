@@ -1,95 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{!! asset('css/datatableBoot.css') !!}">
+    <link rel="stylesheet" href="{!! asset('css/style.css') !!}">
+    {{--<link rel="stylesheet" href="{!! asset('css/style.css') !!}">--}}
+    <link rel="stylesheet" href="{!! asset('css/AdminLTE.min.css') !!}">
+    <script src="{!! asset('js/jquery.3.2.2.js') !!}"></script>
+    <script src="{!! asset('js/bootstrap.js') !!}"></script>
+    <script src="{!! asset('js/datatable.min.js') !!}"></script>
+    <script src="{!! asset('js/dattable.bootstrap.js') !!}"></script>
+    <script src="{!! asset('js/script.js') !!}"></script>
 
-        <title>Laravel</title>
+</head>
+<body style="background-color: #ecf0f5 !important;">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Empower ERP Portal</a>
         </div>
-    </body>
+        {{--<ul class="nav navbar-nav">--}}
+            {{--<li class="active"><a href="#">Home</a></li>--}}
+            {{--<li><a href="#">Page 1</a></li>--}}
+            {{--<li><a href="#">Page 2</a></li>--}}
+            {{--<li><a href="#">Page 3</a></li>--}}
+        {{--</ul>--}}
+    </div>
+</nav>
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+{{--<section class="content-header">--}}
+{{--<h1>--}}
+{{--Data Tables--}}
+{{--<small>advanced tables</small>--}}
+{{--</h1>--}}
+{{--<ol class="breadcrumb">--}}
+{{--<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>--}}
+{{--<li><a href="#">Tables</a></li>--}}
+{{--<li class="active">Data tables</li>--}}
+{{--</ol>--}}
+{{--</section>--}}
+
+<!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Users Data Table</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table id="userTable" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>UserName</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Group</th>
+                                <th>Created At</th>
+                                <th>Status</th>
+
+                            </tr>
+                            </thead>
+                            
+                            <tbody>
+                            @foreach($data as $item)
+
+                                <tr>
+                                    <th scope="row">{{ $item->user_id }}</th>
+                                    <td>{{ $item->user_name }}</td>
+                                    <td>{{ $item->user_firstname }}</td>
+                                    <td>{{ $item->user_lastname }}</td>
+                                    <td>{{ $item->ug_group_id }}</td>
+                                    <td>{{ $item->user_created }}</td>
+                                    <td>{{ $item->user_status }}</td>
+
+
+                                </tr>
+                            @endforeach
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+</div>
+</body>
 </html>

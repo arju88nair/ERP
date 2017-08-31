@@ -16,13 +16,20 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Database\Eloquent\Model;
 use Route;
 
-define('API_URL', 'http://srv1.brandclub.mobi:8082/');
-session_start();
 
 class Home extends Model
 {
 
 
+
+    public static function index()
+    {
+
+        $query="select * from users";
+        $response=DB::select($query);
+
+        return View::make('welcome')->with('data',$response);
+    }
 
 
 }

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Home;
 use View;
 use Auth;
@@ -15,6 +16,9 @@ class HomeController extends Controller
     //
 
 
-
+    public function index(Request $request)
+    {
+        return Home::index($request->all());
+    }
 
 }
