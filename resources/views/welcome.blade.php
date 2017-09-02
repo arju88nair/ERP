@@ -24,10 +24,10 @@
             <a class="navbar-brand" href="#">Empower ERP Portal</a>
         </div>
         {{--<ul class="nav navbar-nav">--}}
-            {{--<li class="active"><a href="#">Home</a></li>--}}
-            {{--<li><a href="#">Page 1</a></li>--}}
-            {{--<li><a href="#">Page 2</a></li>--}}
-            {{--<li><a href="#">Page 3</a></li>--}}
+        {{--<li class="active"><a href="#">Home</a></li>--}}
+        {{--<li><a href="#">Page 1</a></li>--}}
+        {{--<li><a href="#">Page 2</a></li>--}}
+        {{--<li><a href="#">Page 3</a></li>--}}
         {{--</ul>--}}
     </div>
 </nav>
@@ -48,6 +48,45 @@
 
 <!-- Main content -->
     <section class="content">
+
+        <div id="detailsM" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" style="text-align: center">User Details</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="userID"></p>
+                        <hr>
+                        <p id="userName"></p>
+                        <hr>
+                        <p id="fName"></p>
+                        <hr>
+                        <p id="lName"></p>
+                        <hr>
+                        <p id="Group"></p>
+                        <hr>
+                        <p id="created"></p>
+                        <hr>
+                        <p id="modified"></p>
+                        <hr>
+                        <p id="status"></p>
+
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
         <div class="row">
             <div class="col-xs-12">
                 <div class="box">
@@ -66,10 +105,12 @@
                                 <th>Group</th>
                                 <th>Created At</th>
                                 <th>Status</th>
+                                <th>View</th>
+                                <th>Delete</th>
 
                             </tr>
                             </thead>
-                            
+
                             <tbody>
                             @foreach($data as $item)
 
@@ -78,14 +119,22 @@
                                     <td>{{ $item->user_name }}</td>
                                     <td>{{ $item->user_firstname }}</td>
                                     <td>{{ $item->user_lastname }}</td>
-                                    <td>{{ $item->ug_group_id }}</td>
+                                    <td>{{ $item->group_name }}</td>
                                     <td>{{ $item->user_created }}</td>
-                                    <td>{{ $item->user_status }}</td>
+                                    <td id="{{ $item->user_id }}_status">{{ $item->user_status }}</td>
+                                    <td><a data-uid="{{ $item->user_id }}" data-uname="{{ $item->user_name }}"
+                                           data-fname="{{ $item->user_firstname }}"
+                                           data-lname="{{ $item->user_lastname }}" data-group="{{ $item->group_name }}"
+                                           data-created="{{ $item->user_created }}"
+                                           data-modified="{{ $item->user_modified }}"
+                                           data-status="{{ $item->user_status }}" class="detailClick" style="cursor: pointer"
+                                           >View</a></td>
+                                    <td><a href="javascript:void(0)"
+                                           onclick="DeleteUser({{ $item->user_id }})">Delete</a></td>
 
 
                                 </tr>
                             @endforeach
-
 
 
                             </tbody>

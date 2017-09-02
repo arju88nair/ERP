@@ -15,4 +15,7 @@
 
 
 Route::get('/','HomeController@index');
+
 Route::get('/register','HomeController@index');
+
+Route::get('/DeleteUser','HomeController@DeleteUser');

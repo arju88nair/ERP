@@ -21,4 +21,9 @@ class HomeController extends Controller
         return Home::index($request->all());
     }
 
+    public function DeleteUser(Request $request)
+    {
+        return Home::DeleteUser($request->all());
+    }
+
 }

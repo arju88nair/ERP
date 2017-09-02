@@ -25,10 +25,25 @@ class Home extends Model
     public static function index()
     {
 
-        $query="select * from users";
+        $query="SELECT * FROM users u JOIN user_groups ug ON u.ug_group_id = ug.group_id";
         $response=DB::select($query);
 
         return View::make('welcome')->with('data',$response);
+    }
+
+
+    public static function DeleteUser()
+    {
+        $id=$_GET['id'];
+
+        $query="Update users set user_status = 'INACTIVE' where user_id = $id";
+        $response=DB::update($query);
+
+        if($response)
+        {
+            return 1;
+        }
+        return 0;
     }
 
 
