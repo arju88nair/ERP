@@ -16,6 +16,8 @@
 
 Route::get('/','HomeController@index');
 
-Route::get('/register','HomeController@index');
 
 Route::get('/DeleteUser','HomeController@DeleteUser');
+
+
+Route::get('/Application-Configuration','HomeController@Appconf');

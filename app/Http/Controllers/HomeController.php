@@ -26,4 +26,10 @@ class HomeController extends Controller
         return Home::DeleteUser($request->all());
     }
 
+    public function Appconf(Request $request)
+    {
+
+        return Home::Appconf($request->all());
+    }
+
 }

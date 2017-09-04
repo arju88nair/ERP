@@ -35,16 +35,59 @@ class Home extends Model
     public static function DeleteUser()
     {
         $id=$_GET['id'];
+        $action=$_GET['action'];
 
-        $query="Update users set user_status = 'INACTIVE' where user_id = $id";
-        $response=DB::update($query);
-
-        if($response)
+        switch ($action)
         {
-            return 1;
+
+            case "User":
+                $query="Update users set user_status = 'INACTIVE' where user_id = $id";
+                $response=DB::update($query);
+
+                if($response)
+                {
+                    return 1;
+                }
+                return 0;
+                break;
+            case "AppConf":
+                $query="Update user_appconf set is_active = 0 where appconf_id = $id";
+                $response=DB::update($query);
+
+                if($response)
+                {
+                    return 1;
+                }
+                return 0;
+                break;
+
+
+
+
+
+
+
         }
-        return 0;
+
+
+
+
+
+
+
     }
+
+
+    public static function Appconf()
+    {
+
+        $query="SELECT * FROM user_appconf";
+        $response=DB::select($query);
+        return View::make('appconf')->with('data',$response);
+
+
+    }
+
 
 
 }

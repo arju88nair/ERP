@@ -6,6 +6,29 @@ $(document).ready(function () {
 
 
 
+    $(".detailClickApp").click(function () {
+        var path = $(this).data('path')
+        var mail_send = $(this).data('mail_send')
+        var sms_send = $(this).data('sms_send')
+        var func_code = $(this).data('func_code')
+        var uid = $(this).data('uid')
+        var functionality = $(this).data('functionality')
+
+        $("#sms_send").text("SMS Send : "+ sms_send)
+        $("#mail_send").text("Mail Send : "+ mail_send)
+        $("#path").text("Path : "+ path)
+        $("#functionality").text("Functionality : "+ functionality)
+        $("#appConf").text("App Conf ID : "+ uid)
+
+        $("#func_code").text("Functionality Code : "+ func_code)
+        $('#detailsApp').modal('show');
+
+
+
+
+    });
+
+
     $(".detailClick").click(function () {
         var group = $(this).data('group')
         var lname = $(this).data('lname')
@@ -32,12 +55,12 @@ $(document).ready(function () {
 });
 
 
-function DeleteUser(id) {
+function DeleteUser(id,action) {
 
     if (confirm('Are you sure you want to delete ?')) {
         $.ajax({
             type: 'GET',
-            url: '/DeleteUser?id=' + id,
+            url: '/DeleteUser?id=' + id+"&action="+action,
             success: function (data) {
                 $(".spinner").hide();
                 console.log(data)
