@@ -87,10 +87,10 @@
                                        data-func_code="{{ $item->func_code }}"
                                        data-sms_send="{{ $item->sms_send }}" data-mail_send="{{ $item->mail_send }}"
                                        data-path="{{ $item->path }}"
-                                       class="detailClickApp" style="cursor: pointer"
-                                    ><span class="glyphicon glyphicon-th-large"></span> View</a></td>
+                                       type="button" class="detailClickApp btn btn-warning"  style="cursor: pointer"
+                                    > View</a></td>
                                 <td><a href="javascript:void(0)"
-                                       onclick="DeleteUser({{ $item->appconf_id }},'AppConf')"><span class="glyphicon glyphicon-trash"></span>  Delete</a></td>
+                                       type="button" class="btn btn-danger"  onclick="DeleteUser({{ $item->appconf_id }},'AppConf')"> Delete</a></td>
 
 
                             </tr>

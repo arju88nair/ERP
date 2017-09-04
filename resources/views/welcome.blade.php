@@ -93,10 +93,10 @@
                                            data-lname="{{ $item->user_lastname }}" data-group="{{ $item->group_name }}"
                                            data-created="{{ $item->user_created }}"
                                            data-modified="{{ $item->user_modified }}"
-                                           data-status="{{ $item->user_status }}" class="detailClick" style="cursor: pointer"
-                                           ><span class="glyphicon glyphicon-th-large"></span> View</a></td>
+                                           data-status="{{ $item->user_status }}"  style="cursor: pointer"
+                                           type="button" class="detailClick btn btn-warning" >View</a></td>
                                     <td><a href="javascript:void(0)"
-                                           onclick="DeleteUser({{ $item->user_id }},'User')"><span class="glyphicon glyphicon-trash"></span> Delete</a></td>
+                                           type="button" class="btn btn-danger" onclick="DeleteUser({{ $item->user_id }},'User')">Delete</a></td>
 
 
                                 </tr>
@@ -122,7 +122,7 @@
 <script>
     $(document).ready(function()
     {
-        $("li#home").addClass('active');
+        $("#home").addClass('active');
     });
 
 </script>
