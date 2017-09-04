@@ -21,3 +21,24 @@ Route::get('/DeleteUser','HomeController@DeleteUser');
 
 
 Route::get('/Application-Configuration','HomeController@Appconf');
+
+
+Route::get('/bankAccountMaster','HomeController@bankAccountMaster');
+
+
+Route::get('/bankAccountSignatories','HomeController@bankAccountSignatories');
+
+
+Route::get('/bankMasters','HomeController@bankMasters');
+
+
+Route::get('/chequeBook','HomeController@chequeBook');
+
+
+Route::get('/chequeLeaves','HomeController@chequeLeaves');
+
+
+Route::get('/creditdebit','HomeController@creditdebit');
+
+
+Route::get('/accountNature','HomeController@accountNature');

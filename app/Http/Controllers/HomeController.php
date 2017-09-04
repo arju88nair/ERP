@@ -32,4 +32,46 @@ class HomeController extends Controller
         return Home::Appconf($request->all());
     }
 
+    public function bankAccountMaster(Request $request)
+    {
+
+        return Home::bankAccountMaster($request->all());
+    }
+
+    public function bankAccountSignatories(Request $request)
+    {
+
+        return Home::bankAccountSignatories($request->all());
+    }
+
+    public function bankMasters(Request $request)
+    {
+
+        return Home::bankMasters($request->all());
+    }
+
+    public function chequeBook(Request $request)
+    {
+
+        return Home::chequeBook($request->all());
+    }
+
+    public function chequeLeaves(Request $request)
+    {
+
+        return Home::chequeLeaves($request->all());
+    }
+
+    public function creditdebit(Request $request)
+    {
+
+        return Home::creditdebit($request->all());
+    }
+
+    public function accountNature(Request $request)
+    {
+
+        return Home::accountNature($request->all());
+    }
+
 }
