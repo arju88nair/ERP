@@ -22,7 +22,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title" style="text-align: center">Bank Master Details</h4>
+                    <h4 class="modal-title" style="text-align: center">Cheques Leaves Details</h4>
                 </div>
                 <div class="modal-body">
 
@@ -49,7 +49,7 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Users Data Table</h3>
+                    <h3 class="box-title">Cheque Leaves Table</h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">

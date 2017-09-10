@@ -110,6 +110,15 @@ body{
 
 
 
+@font-face {
+    font-family: myFont;
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+
+body{
+    font-family: myFont !important;
+    background-color: #ecf0f5 !important;
+}
 
 
 .dropdown-submenu {

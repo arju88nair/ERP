@@ -42,3 +42,36 @@ Route::get('/creditdebit','HomeController@creditdebit');
 
 
 Route::get('/accountNature','HomeController@accountNature');
+
+
+Route::get('/Asset','HomeController@Asset');
+
+
+Route::get('/Depreciation-Master','HomeController@DepMaster');
+
+
+Route::get('/Asset-Classification','HomeController@AssetClassification');
+
+
+Route::get('/Financial-Year','HomeController@FinancialYear');
+
+
+Route::get('/Fixed-Asset-Register','HomeController@FixedAssetRegister');
+
+
+Route::get('/General-ledger','HomeController@generalLedger');
+
+
+Route::get('/Invoice-Prefix','HomeController@invoicePrefix');
+
+
+Route::get('/Invoice-Status','HomeController@invoiceStatus');
+
+
+Route::get('/Invoice-Type','HomeController@invoiceType');
+
+
+Route::get('/Sub-Ledger-Code','HomeController@subLedger');
+
+
+Route::get('/Commercial-Tax','HomeController@CommTax');
