@@ -113,7 +113,35 @@ class HomeController extends Controller
     public function subLedger(Request $request){
         return Home::subLedger($request->all());
     }
+
     public function CommTax(Request $request){
         return Home::CommTax($request->all());
     }
+
+    public function CommodTax(Request $request){
+        return Home::CommodTax($request->all());
+    }
+
+    public function CommodTypes(Request $request){
+        return Home::CommodTypes($request->all());
+    }
+
+    public function corpIncTaxSlab(Request $request){
+        return Home::corpIncTaxSlab($request->all());
+    }
+
+    public function insuranceCompanies(Request $request){
+        return Home::insuranceCompanies($request->all());
+    }
+
+    public function taxes(Request $request){
+        return Home::taxes($request->all());
+    }
+
+
+    public function voucherType(Request $request){
+        return Home::voucherType($request->all());
+    }
+
+
 }

@@ -117,6 +117,12 @@
                             <ul class="dropdown-menu">
                                 {{--<li><a tabindex="-1" href="#">Second level</a></li>--}}
                                 <li><a href="/Commercial-Tax">Commercial Tax</a></li>
+                                <li><a href="/Commodity-Taxes">Commodity Taxes</a></li>
+                                <li><a href="/Commodity-Types">Commodity Type</a></li>
+                                <li><a href="/Corp-Income-TaxSlab">Corp Income TaxSlab</a></li>
+                                <li><a href="/Insurance-Companies">Insurance Companies</a></li>
+                                <li><a href="/Taxes">Taxes</a></li>
+                                <li><a href="/Voucher-Type">Voucher Type</a></li>
 
 
                             </ul>

@@ -123,6 +123,25 @@ class Home extends Model
                 return 0;
                 break;
 
+            case "commodType":
+                $response = DB::table('fin_commodity_type')->where('commodity_type_id', $id)->delete();;
+
+                if ($response) {
+                    return 1;
+                }
+                return 0;
+                break;
+
+
+            case "insuranceCompanies":
+                $response = DB::table('fin_insurance_companies')->where('insurance_companies_id', $id)->delete();;
+
+                if ($response) {
+                    return 1;
+                }
+                return 0;
+                break;
+
 
         }
 
@@ -301,10 +320,71 @@ ON fsl.fin_nature_of_account=fna.nature_of_account_id JOIN fin_general_ledger_co
 
     public static function CommTax()
     {
-        $query = "SELECT sub_ledger_code_id,gl_name,account_head,account_no,nature_of_account FROM fin_sub_ledger_code fsl JOIN fin_nature_of_account fna
-ON fsl.fin_nature_of_account=fna.nature_of_account_id JOIN fin_general_ledger_code fgl ON fsl.f_general_ledger_id=fgl.general_ledger_id";
+        $query = "SELECT commercial_tax_id,tax_name,state_id,user_financial_year,tax_rate,draw_back_available FROM
+fin_commercial_tax fct JOIN fin_taxes ft ON ft.taxes_id=fct.tax_name_id ";
         $response = DB::select($query);
         return View::make('CommTax')->with('data', $response);
+    }
+
+
+
+    public static function CommodTax()
+    {
+        $query = "SELECT commodity_tax_id,commodity_name,state_id,state_tax_rate,centre_tax_rate,service_tax_rate FROM
+fin_commodity_tax fct JOIN fin_commodity_type ft ON ft.commodity_type_id=fct.f_commodity_type_id ";
+        $response = DB::select($query);
+        return View::make('CommodTax')->with('data', $response);
+    }
+
+
+
+
+    public static function CommodTypes()
+    {
+        $query = "SELECT commodity_type_id,commodity_name FROM fin_commodity_type
+";
+        $response = DB::select($query);
+        return View::make('CommodTypes')->with('data', $response);
+    }
+
+
+
+
+    public static function corpIncTaxSlab()
+    {
+        $query = "SELECT corp_income_tax_slab_id,description,finyear,income_from,income_to,tax_rate_percent FROM
+fin_corp_income_tax_slab fct JOIN user_corporate_structure ucs ON fct.u_corporate_structure_id=ucs.corporate_structure_id 
+JOIN user_financial_year ufy ON fct.u_financial_year_id=ufy.user_financial_year_id";
+        $response = DB::select($query);
+        return View::make('corpIncTaxSlab')->with('data', $response);
+    }
+
+
+    public static function insuranceCompanies()
+    {
+        $query = "SELECT insurance_companies_id,insurance_companies_name FROM fin_insurance_companies
+";
+        $response = DB::select($query);
+        return View::make('insuranceCompanies')->with('data', $response);
+    }
+
+
+    public static function taxes()
+    {
+        $query = "SELECT taxes_id,tax_name FROM fin_taxes ";
+        $response = DB::select($query);
+        return View::make('taxes')->with('data', $response);
+    }
+
+
+
+    public static function voucherType()
+    {
+        $query = "SELECT voucher_type_id,voucher_type,vr_prefix,finyear FROM fin_voucher_type fvt JOIN user_financial_year ufy 
+ON fvt.u_financial_year_id=ufy.user_financial_year_id
+";
+        $response = DB::select($query);
+        return View::make('voucherType')->with('data', $response);
     }
 
 

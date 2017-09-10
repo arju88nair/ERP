@@ -2,28 +2,24 @@
 
 <section class="content">
 
-    <div id="commTax" class="modal fade" role="dialog">
+    <div id="corpIncTaxSlab" class="modal fade" role="dialog">
         <div class="modal-dialog">
 
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title" style="text-align: center">Commercial Tax
+                    <h4 class="modal-title" style="text-align: center">Corp Income TaxSlab
                     </h4>
                 </div>
                 <div class="modal-body">
                     <p id="recNum"></p>
                     <hr>
-                    <p id="tax_name"></p>
-                    <hr>
-                    <p id="state_id"></p>
-                    <hr>
-                    <p id="user_financial_year"></p>
-                    <hr>
-                    <p id="tax_rate"></p>
-                    <hr>
-                    <p id="draw_back_available"></p>
+                    <p id="description"></p> <hr>
+                    <p id="finyear"></p> <hr>
+                    <p id="income_from"></p> <hr>
+                    <p id="income_to"></p> <hr>
+                    <p id="tax_rate_percent"></p>
 
 
                 </div>
@@ -40,7 +36,7 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Commercial Tax
+                    <h3 class="box-title">Corp Income TaxSlab
                     </h3>
                 </div>
                 <!-- /.box-header -->
@@ -50,11 +46,12 @@
                         <thead>
                         <tr>
                             <th>Record No</th>
-                            <th>Tax Name	</th>
-                            <th>State</th>
-                            <th>Financial Year</th>
-                            <th>Tax Rate</th>
-                            <th>Draw Back Available</th>
+                            <th>Corporate Structure</th>
+                            <th>Financial Year	</th>
+                            <th>Income From	</th>
+                            <th>Income To	</th>
+                            <th>Tax rate percent</th>
+
                             <th>View</th>
                             <th>Delete</th>
                         </tr>
@@ -64,24 +61,28 @@
                         @foreach($data as $item)
 
                             <tr>
-                                <th scope="row">{{ $item->commercial_tax_id }}</th>
-                                <td>{{ $item->tax_name }}</td>
-                                <td>{{ $item->state_id }}</td>
-                                <td>{{ $item->user_financial_year }}</td>
-                                <td>{{ $item->tax_rate }}</td>
-                                <td>{{ $item->draw_back_available }}</td>
-                                <td><a data-uid="{{ $item->commercial_tax_id }}" data-tax_name="{{ $item->tax_name }}"
-                                       data-state_id="{{ $item->state_id }}"
-                                       data-user_financial_year="{{ $item->user_financial_year }}"
-                                       data-tax_rate="{{ $item->tax_rate }}"
-                                       data-draw_back_available="{{ $item->draw_back_available }}"
+                                <th scope="row">{{ $item->corp_income_tax_slab_id }}</th>
+                                <td>{{ $item->description }}</td>
+                                <td>{{ $item->finyear }}</td>
+                                <td>{{ $item->income_from }}</td>
+                                <td>{{ $item->income_to }}</td>
+                                <td>{{ $item->tax_rate_percent }}</td>
 
-                                       type="button" class="commTax btn btn-warning" style="cursor: pointer"
+
+                                <td><a data-uid="{{ $item->corp_income_tax_slab_id }}"
+                                       data-tax_rate_percent="{{ $item->tax_rate_percent }}"
+                                       data-income_to="{{ $item->income_to }}"
+                                       data-income_from="{{ $item->income_from }}"
+                                       data-finyear="{{ $item->finyear }}"
+                                       data-description="{{ $item->description }}"
+
+                                       type="button" class="corpIncTaxSlab btn btn-warning" style="cursor: pointer"
                                     > View</a></td>
 
                                 <td><a href="javascript:void(0)"
                                        type="button" class="btn btn-danger"
-                                       onclick="DeleteUser({{ $item->tax_name }},'commTax')"> Delete</a></td>
+                                       onclick="DeleteUser({{ $item->corp_income_tax_slab_id }},'corpIncTaxSlab')"> Delete</a>
+                                </td>
                                 {{--<td><a hre="#" type="button" class="btn btn-primary">Edit</a></td>--}}
 
 

@@ -246,6 +246,126 @@ $(document).ready(function () {
     });
 
 
+    $(".commTax").click(function () {
+        var uid = $(this).data('uid')
+        var tax_name = $(this).data('tax_name')
+        var state_id = $(this).data('state_id')
+        var user_financial_year = $(this).data('user_financial_year')
+        var tax_rate = $(this).data('tax_rate')
+        var draw_back_available = $(this).data('draw_back_available')
+        $("#recNum").html("<b>Record Number</b> : " + uid)
+        $("#tax_name").html("<b>Tax Name : </b>" + tax_name)
+        $("#state_id").html("<b>State ID : </b>" + state_id)
+        $("#user_financial_year").html("<b>User Financial year : </b>" + user_financial_year)
+        $("#tax_rate").html("<b>Tax Rate : </b>" + tax_rate)
+        $("#draw_back_available").html("<b>Draw Back Available : </b>" + draw_back_available)
+        $('#commTax').modal('show');
+
+    });
+
+
+
+    $(".commodTax").click(function () {
+        var uid = $(this).data('uid')
+        var commodity_name = $(this).data('commodity_name')
+        var state_id = $(this).data('state_id')
+        var state_tax_rate = $(this).data('state_tax_rate')
+        var centre_tax_rate = $(this).data('centre_tax_rate')
+        var service_tax_rate = $(this).data('service_tax_rate')
+        $("#recNum").html("<b>Record Number</b> : " + uid)
+        $("#commodity_name").html("<b>Commodity Name : </b>" + commodity_name)
+        $("#state_id").html("<b>State Name : </b>" + state_id)
+        $("#state_tax_rate").html("<b>State Tax Rate : </b>" + state_tax_rate)
+        $("#centre_tax_rate").html("<b>Centre Tax Rate : </b>" + centre_tax_rate)
+        $("#service_tax_rate").html("<b>Service Tax Rate: </b>" + service_tax_rate)
+        $('#commodTax').modal('show');
+
+    });
+
+
+
+    $(".commodType").click(function () {
+        var uid = $(this).data('uid')
+        var commodity_name = $(this).data('commodity_name')
+
+        $("#recNum").html("<b>Record Number</b> : " + uid)
+        $("#commodity_name").html("<b>Commodity Name : </b>" + commodity_name)
+
+        $('#commodType').modal('show');
+
+    });
+
+
+
+    $(".corpIncTaxSlab").click(function () {
+        var uid = $(this).data('uid')
+        var tax_rate_percent = $(this).data('tax_rate_percent')
+        var description = $(this).data('description')
+        var finyear = $(this).data('finyear')
+        var income_from = $(this).data('income_from')
+        var income_to = $(this).data('income_to')
+
+        $("#recNum").html("<b>Record Number</b> : " + uid)
+        $("#tax_rate_percent").html("<b>Tax Rate Percent: </b>" + tax_rate_percent)
+        $("#income_to").html("<b>Income To: </b>" + income_to)
+        $("#income_from").html("<b>Income From: </b>" + income_from)
+        $("#finyear").html("<b>Financial Year: </b>" + finyear)
+        $("#description").html("<b>Description: </b>" + description)
+
+        $('#corpIncTaxSlab').modal('show');
+
+    });
+
+
+
+    $(".insuranceCompanies").click(function () {
+        var uid = $(this).data('uid')
+        var insurance_companies_name = $(this).data('insurance_companies_name')
+
+
+        $("#recNum").html("<b>Record Number</b> : " + uid)
+        $("#insurance_companies_name").html("<b>Insurance Company Name </b>" + insurance_companies_name)
+
+
+        $('#insuranceCompanies').modal('show');
+
+    });
+
+
+
+    $(".taxes").click(function () {
+        var uid = $(this).data('uid')
+        var tax_name = $(this).data('tax_name')
+
+
+        $("#recNum").html("<b>Record Number</b> : " + uid)
+        $("#tax_name").html("<b>Tax Name </b>" + tax_name)
+
+
+        $('#taxes').modal('show');
+
+    });
+
+
+
+    $(".voucherType").click(function () {
+        var uid = $(this).data('uid')
+        var voucher_type = $(this).data('voucher_type')
+        var vr_prefix = $(this).data('vr_prefix')
+        var finyear = $(this).data('finyear')
+
+
+        $("#recNum").html("<b>Record Number</b> : " + uid)
+        $("#voucher_type").html("<b>Voucher Type : </b>" + voucher_type)
+        $("#vr_prefix").html("<b>Voucher Prefix : </b>" + vr_prefix)
+        $("#finyear").html("<b>Financial Year : </b>" + finyear)
+
+
+        $('#voucherType').modal('show');
+
+    });
+
+
 });
 
 

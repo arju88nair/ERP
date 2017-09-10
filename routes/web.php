@@ -75,3 +75,22 @@ Route::get('/Sub-Ledger-Code','HomeController@subLedger');
 
 
 Route::get('/Commercial-Tax','HomeController@CommTax');
+
+
+Route::get('/Commodity-Taxes','HomeController@CommodTax');
+
+
+Route::get('/Commodity-Types','HomeController@CommodTypes');
+
+
+Route::get('/Corp-Income-TaxSlab','HomeController@corpIncTaxSlab');
+
+
+Route::get('/Insurance-Companies','HomeController@insuranceCompanies');
+
+
+Route::get('/Taxes','HomeController@taxes');
+
+
+Route::get('/Voucher-Type','HomeController@voucherType');
+
