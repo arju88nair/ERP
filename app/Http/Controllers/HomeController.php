@@ -138,10 +138,128 @@ class HomeController extends Controller
         return Home::taxes($request->all());
     }
 
-
     public function voucherType(Request $request){
         return Home::voucherType($request->all());
     }
 
+    public function GovtDept(Request $request){
+        return Home::govtDept($request->all());
+    }
 
+    public function MonthlyPayMaster(Request $request){
+        return Home::monthlyPayMaster($request->all());
+    }
+
+    public function ItAssesseType(Request $request){
+        return Home::itAssesseType($request->all());
+    }
+
+    public function ItHraRule(Request $request){
+        return Home::itHraRule($request->all());
+    }
+
+    public function ITDeductionLimit(Request $request){
+        return Home::itDeductionLimit($request->all());
+    }
+
+    public function ITDeductionHeader(Request $request){
+        return Home::iTDeductionHeader($request->all());
+    }
+
+    public function ITDeductionHeaderCap(Request $request){
+        return Home::iTDeductionHeaderCap($request->all());
+    }
+
+    public function ITTaxSlab(Request $request){
+        return Home::iTTaxSlab($request->all());
+    }
+
+    public function ITSectionHeader(Request $request){
+        return Home::iTSectionHeader($request->all());
+    }
+
+    public function DocumentsReceived(Request $request){
+        return Home::DocumentsReceived($request->all());
+    }
+
+
+    public function MyItDeclaration(Request $request){
+
+        return Home::MyItDeclaration($request->all());
+    }
+
+
+    public function BranchTypeMaster(Request $request){
+
+        return Home::BranchTypeMaster($request->all());
+    }
+
+
+    public function Designation(Request $request){
+
+        return Home::Designation($request->all());
+    }
+
+
+    public function UsersDisabledDependents(Request $request){
+
+        return Home::UsersDisabledDependents($request->all());
+    }
+
+
+    public function Earning(Request $request){
+
+        return Home::Earning($request->all());
+    }
+
+
+    public function EmploymentType(Request $request){
+
+        return Home::EmploymentType($request->all());
+    }
+
+    public function Family(Request $request){
+
+        return Home::Family($request->all());
+    }
+
+    public function HRAttendenceMapping(Request $request){
+        return Home::hRAttendenceMapping($request->all());
+    }
+
+    public function BuyPolicy(Request $request){
+        return Home::buyPolicy($request->all());
+    }
+
+    public function ServiceCategory(Request $request){
+        return Home::serviceCategory($request->all());
+    }
+
+    public function ServiceCenterDeliverable(Request $request){
+        return Home::serviceCenterDeliverable($request->all());
+    }
+
+    public function ServiceCenterGroup(Request $request){
+        return Home::serviceCenterGroup($request->all());
+    }
+
+    public function ServiceCenter1(Request $request){
+        return Home::serviceCenter1($request->all());
+    }
+
+    public function ServiceCenter2(Request $request){
+        return Home::serviceCenter2($request->all());
+    }
+
+    public function ServiceCharge(Request $request){
+        return Home::serviceCharge($request->all());
+    }
+
+    public function PaymentStatus(Request $request){
+        return Home::paymentStatus($request->all());
+    }
+
+    public function DelIMT21(Request $request){
+        return Home::delIMT21($request->all());
+    }
 }

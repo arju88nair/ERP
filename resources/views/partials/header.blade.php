@@ -99,6 +99,9 @@
                                 Depreciation Master</a></li>
                                 <li><a href="/Asset-Classification">Finance Classification</a></li>
                                 <li><a href="/Financial-Year">Financial Year</a></li>
+                                <li><a href="/Fixed-Asset-Register">Fixed Asset Register</a></li>
+                                <li><a href="/Govt-Dept">Govt Department</a></li>
+                                <li><a href="/Monthly-Payment-Master">Monthly Pay Master</a></li>
                             </ul>
                         </li>
                         <li class="dropdown-submenu">
@@ -134,6 +137,36 @@
                     <a href="#" data-toggle="dropdown" class="dropdown-toggle">HR Management <b class="caret"></b></a>
                     <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
                         <li class="dropdown-submenu">
+                            <a tabindex="-1" href="#">Employee Process</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/Documents-Recieved">Documents Received</a></li>
+                                <li><a href="/My-It-Declaration">My It Declaration</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1" href="#">HR Masters</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/Branch-Type-Master">Branch Type Master</a></li>
+                                <li><a href="/Designation">Designation</a></li>
+                                <li><a href="/Users-Disabled-Dependents">Users Disabled Dependents</a></li>
+                                <li><a href="/Earning">Earning</a></li>
+                                <li><a href="/Employment-Type">Employment Type</a></li>
+                                <li><a href="/Family">Family</a></li>
+                                <li><a href="/HR-Attendence-Mapping">HR Attendence Mapping</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1" href="#">IT Masters</a>
+                            <ul class="dropdown-menu">
+                                {{--<li><a tabindex="-1" href="#">Second level</a></li>--}}
+                                <li><a href="/IT-Assesee-Type">IT Assesee Type</a></li>
+                                <li><a href="/IT-Hra-Rule">IT HRA Rules</a></li>
+                                <li><a href="/IT-Deduction-Limit">IT Deduction Limit</a></li>
+                                <li><a href="/IT-Deduction-Header">IT/Section Deduction Header</a></li>
+                                <li><a href="/IT-Deduction-Header-Cap">IT/Section Header Cap</a></li>
+                                <li><a href="/IT-Tax-Slab">IT Tax Slab</a></li>
+                                <li><a href="/IT-Section-Header">IT Section Header</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </li>
@@ -141,7 +174,24 @@
                 <li class="dropdown">
                     <a href="#" data-toggle="dropdown" class="dropdown-toggle">Insurance Shoppy <b class="caret"></b></a>
                     <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                        <li><a href="/Buy-Policy">Buy Policy</a></li>
                         <li class="dropdown-submenu">
+                            <a tabindex="-1" href="#">Customer Service</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/Service-Category">Service Category</a></li>
+                                <li><a href="/Service-Center-Deliverable">Service Center Deliverable</a></li>
+                                <li><a href="/Service-Center-Group">Service Center Group</a></li>
+                                <li><a href="/Service-Center1">Service Center1</a></li>
+                                <li><a href="/Service-Center2">Service Center2</a></li>
+                                <li><a href="/Service-Charge">Service Charge</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1" href="#">Insurance Master</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/Payment-Status">Payment Status</a></li>
+                                <li><a href="/Deletion-IMT21">Deletion of IMT21</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </li>

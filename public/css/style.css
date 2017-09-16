@@ -120,6 +120,10 @@ body{
     background-color: #ecf0f5 !important;
 }
 
+.modal-header{
+    background-color: grey;
+    color: white;
+}
 
 .dropdown-submenu {
     position: relative;

@@ -26,6 +26,17 @@ $(document).ready(function () {
         }
     });
 
+    $('#GovtDeptMasterTable').DataTable();
+    $('#MonthlyPayMasterTable').DataTable();
+    $('#ItAsseseeTypeMasterTable').DataTable();
+    $('#ItHraRuleMasterTable').DataTable();
+    $('#ItDeductionLimitMasterTable').DataTable();
+    $('#ItDeductionHeaderMasterTable').DataTable();
+    $('#ItSectionHeaderCapMasterTable').DataTable();
+    $('#ItTaxSlabMasterTable').DataTable();
+    $('#ItSectionHeaderMasterTable').DataTable();
+    $('#HrAttendenceMasterTable').DataTable();
+    $('#MasterTable').DataTable();
 
     $('#respoTable').DataTable({
         responsive: {
@@ -45,7 +56,7 @@ $(document).ready(function () {
     });
 
 
-    $(".detailClickApp").click(function () {
+    $('table').on('click','.detailClickApp',function () {
         var path = $(this).data('path')
         var mail_send = $(this).data('mail_send')
         var sms_send = $(this).data('sms_send')
@@ -66,7 +77,7 @@ $(document).ready(function () {
     });
 
 
-    $(".detailClick").click(function () {
+    $('table').on('click','.detailClick',function () {
         var group = $(this).data('group')
         var lname = $(this).data('lname')
         var fname = $(this).data('fname')
@@ -84,12 +95,122 @@ $(document).ready(function () {
         $("#modified").text("Modified at : " + modified)
         $("#status").text("Status : " + status)
         $('#detailsM').modal('show');
+    });
 
+    $('table').on('click','.detailClickItSectionHeaderCap',function(){
+        var id = $(this).data('uid');
+        var name = $(this).data('name')
+        var head = $(this).data('head')
+        var type = $(this).data('type')
+        var percentage = $(this).data('percentage')
+        var cap = $(this).data('cap')
+        $("#id").text(id)
+        $("#year").text(name)
+        $("#type").text(type)
+        $("#head").text(head)
+        $("#percentage").text(percentage)
+        $("#cap").text(cap)
+        $('#detailsItSectionHeaderCap').modal('show');
+    });
 
+    $('table').on('click','.detailClickItSectionHeader',function(){
+        var id = $(this).data('uid');
+        var name = $(this).data('name')
+        $("#id").text(id)
+        $("#name").text(name)
+        $('#detailsItSectionHeader').modal('show');
+    });
+
+    $('table').on('click','.detailClickItTaxSlab',function(){
+        var id = $(this).data('uid');
+        var name = $(this).data('name')
+        var from = $(this).data('from')
+        var type = $(this).data('type')
+        var to = $(this).data('to')
+        var amount = $(this).data('amount')
+        var income = $(this).data('income')
+        $("#id").text(id)
+        $("#year").text(name)
+        $("#type").text(type)
+        $("#from").text(from)
+        $("#to").text(to)
+        $("#amount").text(amount)
+        $('#income').text(income)
+        $('#detailsItTaxSlab').modal('show');
+    });
+
+    $('table').on('click','.detailClickItDeductionLimit',function () {
+        var id = $(this).data('uid');
+        var name = $(this).data('name')
+        var year = $(this).data('year')
+        var type = $(this).data('type')
+        var percentage = $(this).data('percentage')
+        var amount = $(this).data('amount')
+        $("#id").text(id)
+        $("#city").text(name)
+        $("#year").text(year)
+        $("#assesee").text(type)
+        $("#per_allowed").text(percentage)
+        $("#amnt_allowed").text(amount)
+        $('#detailsItDeduction').modal('show');
+    });
+
+    $('table').on('click','.detailClickMonthlyPay',function(){
+        var id = $(this).data('uid')
+        var voucher = $(this).data('voucher')
+        var name = $(this).data('name')
+        var head = $(this).data('head')
+        var amount = $(this).data('amount')
+        var due = $(this).data('due')
+        var narration = $(this).data('narration')
+        $("#id").text(id)
+        $("#voucher").text(voucher)
+        $("#name").text(name)
+        $("#head").text(head)
+        $("#amount").text(amount)
+        $("#due").text(due)
+        $("#narration").text(narration)
+        $('#detailsMonthlyPay').modal('show');
+    });
+
+    $('table').on('click','.detailClickGovtDept',function () {
+        var id = $(this).data('uid')
+        var name = $(this).data('name')
+        $("#recNum").text(id)
+        $("#govtdept").text(name)
+        $('#detailsGovtDept').modal('show');
+    });
+
+    $('table').on('click','.detailClickItDeductionHeader',function () {
+        var id = $(this).data('uid')
+        var name = $(this).data('name')
+        var head = $(this).data('head')
+        $("#id").text(id)
+        $("#name").text(name)
+        $('#head').text(head)
+        $('#detailsItDeductionHeader').modal('show');
+    });
+
+    $('table').on('click','.detailClickAsseseeType',function () {
+        var id = $(this).data('uid')
+        var name = $(this).data('voucher')
+        $("#id").text(id)
+        $("#voucher").text(name)
+        $('#detailsAsseseeType').modal('show');
+    });
+
+    $('table').on('click','.detailClickHraRule',function () {
+        var id = $(this).data('uid');
+        var name = $(this).data('name');
+        var limit = $(this).data('limit');
+        $("#id").text(id);
+        $("#city").text(name);
+        $("#lim_percentage").text(limit);
+        $('#detailsHraRule').modal('show');
     });
 
 
-    $(".detailsAppbm").click(function () {
+    $('table').on('click','.detailsAppbm',function () {
         var bank_code = $(this).data('bank_code')
         var bank_account_no = $(this).data('bank_account_no')
         var bank_name = $(this).data('bank_name')
@@ -102,7 +223,7 @@ $(document).ready(function () {
     });
 
 
-    $(".detailsAppcb").click(function () {
+    $('table').on('click','.detailsAppcb',function () {
         var chequebook_no = $(this).data('chequebook_no')
         var bank_account_no = $(this).data('bank_account_no')
         var cheque_leaf_from = $(this).data('cheque_leaf_from')
@@ -117,7 +238,7 @@ $(document).ready(function () {
     });
 
 
-    $(".detailsAppcl").click(function () {
+    $('table').on('click','.detailsAppcl',function () {
         var chequebook_id = $(this).data('chequebook_id')
         var leafno = $(this).data('leafno')
         var status = $(this).data('status')
@@ -130,7 +251,7 @@ $(document).ready(function () {
     });
 
 
-    $(".detailsAppcdeb").click(function () {
+    $('table').on('click','.detailsAppcdeb',function () {
         var credit_debit_id = $(this).data('uid')
         var description = $(this).data('description')
         var code = $(this).data('code')
@@ -141,7 +262,7 @@ $(document).ready(function () {
     });
 
 
-    $(".detailsAppnatac").click(function () {
+    $('table').on('click','.detailsAppnatac',function () {
         var nature_of_account = $(this).data('nature_of_account')
         var nature_of_account_id = $(this).data('nature_of_account_id')
         $("#nature_of_account_id").text("Nature of account ID: " + nature_of_account_id)
@@ -151,7 +272,7 @@ $(document).ready(function () {
     });
 
 
-    $('.detailAssetClass').click(function () {
+    $('table').on('click','.detailAssetClass',function () {
         var id = $(this).data('uid');
         var name = $(this).data('uname');
         $('#recordNum').html('<b>Record Num : </b>' + id);
@@ -159,7 +280,7 @@ $(document).ready(function () {
         $('#detailAssetClass').modal('show');
     });
 
-    $('.detailClickDepreciation').click(function () {
+    $('table').on('click','.detailClickDepreciation',function () {
         var recNum = $(this).data('uid');
         var assetName = $(this).data('classification');
         var govtDept = $(this).data('govt_dept');
@@ -173,7 +294,7 @@ $(document).ready(function () {
         $('#detailsDepreciation').modal('show');
     });
 
-    $(".detailClickAsset").click(function () {
+    $('table').on('click','.detailClickAsset',function () {
         var func_code = $(this).data('func_code')
         var uid = $(this).data('uid')
         var functionality = $(this).data('functionality')
@@ -185,7 +306,7 @@ $(document).ready(function () {
 
     });
 
-    $(".GeneralLedger").click(function () {
+    $('table').on('click','.GeneralLedger',function () {
         var gl_code = $(this).data('gl_code')
         var uid = $(this).data('uid')
         var gl_name = $(this).data('gl_name')
@@ -197,7 +318,7 @@ $(document).ready(function () {
 
     });
 
-    $(".invoicePref").click(function () {
+    $('table').on('click','.invoicePref',function () {
         var invoice_type = $(this).data('invoice_type')
         var uid = $(this).data('uid')
         var invoice_prefix = $(this).data('invoice_prefix')
@@ -209,7 +330,7 @@ $(document).ready(function () {
 
     });
 
-    $(".invoiceStatus").click(function () {
+    $('table').on('click','.invoiceStatus',function () {
         var uid = $(this).data('uid')
         var invoice_status = $(this).data('invoice_status')
         $("#recNum").html("<b>Record Number</b> : " + uid)
@@ -219,7 +340,7 @@ $(document).ready(function () {
     });
 
 
-    $(".invoiceType").click(function () {
+    $('table').on('click','.invoiceType',function () {
         var uid = $(this).data('uid')
         var invoice_type = $(this).data('invoice_type')
         $("#recNum").html("<b>Record Number</b> : " + uid)
@@ -230,7 +351,7 @@ $(document).ready(function () {
 
 
 
-    $(".subLedger").click(function () {
+    $('table').on('click','.subLedger',function () {
         var uid = $(this).data('uid')
         var gl_name = $(this).data('gl_name')
         var account_no = $(this).data('account_no')
@@ -246,7 +367,7 @@ $(document).ready(function () {
     });
 
 
-    $(".commTax").click(function () {
+    $('table').on('click','.commTax',function () {
         var uid = $(this).data('uid')
         var tax_name = $(this).data('tax_name')
         var state_id = $(this).data('state_id')
@@ -265,7 +386,7 @@ $(document).ready(function () {
 
 
 
-    $(".commodTax").click(function () {
+    $('table').on('click','.commodTax',function () {
         var uid = $(this).data('uid')
         var commodity_name = $(this).data('commodity_name')
         var state_id = $(this).data('state_id')
@@ -284,7 +405,7 @@ $(document).ready(function () {
 
 
 
-    $(".commodType").click(function () {
+    $('table').on('click','.commodType',function () {
         var uid = $(this).data('uid')
         var commodity_name = $(this).data('commodity_name')
 
@@ -297,7 +418,7 @@ $(document).ready(function () {
 
 
 
-    $(".corpIncTaxSlab").click(function () {
+    $('table').on('click','.corpIncTaxSlab',function () {
         var uid = $(this).data('uid')
         var tax_rate_percent = $(this).data('tax_rate_percent')
         var description = $(this).data('description')
@@ -318,7 +439,7 @@ $(document).ready(function () {
 
 
 
-    $(".insuranceCompanies").click(function () {
+    $('table').on('click','.insuranceCompanies',function () {
         var uid = $(this).data('uid')
         var insurance_companies_name = $(this).data('insurance_companies_name')
 
@@ -333,7 +454,7 @@ $(document).ready(function () {
 
 
 
-    $(".taxes").click(function () {
+    $('table').on('click','.taxes',function () {
         var uid = $(this).data('uid')
         var tax_name = $(this).data('tax_name')
 
@@ -348,7 +469,7 @@ $(document).ready(function () {
 
 
 
-    $(".voucherType").click(function () {
+    $('table').on('click','.voucherType',function () {
         var uid = $(this).data('uid')
         var voucher_type = $(this).data('voucher_type')
         var vr_prefix = $(this).data('vr_prefix')
@@ -362,6 +483,200 @@ $(document).ready(function () {
 
 
         $('#voucherType').modal('show');
+
+    });
+
+    $('table').on('click','.DocRec',function () {
+        var uid = $(this).data('uid')
+        var user_name = $(this).data('user_name')
+        var document_name = $(this).data('document_name')
+        var amount_paid = $(this).data('amount_paid')
+        var submitted_on_date = $(this).data('submitted_on_date')
+
+
+        $("#recNum").text(uid)
+        $("#user_name").text(user_name)
+        $("#document_name").text(document_name)
+        $("#submitted_on_date").text(submitted_on_date)
+        $("#amount_paid").text(amount_paid)
+
+
+        $('#DocRec').modal('show');
+
+    });
+
+    $('table').on('click','.MyItDeclaration',function () {
+        var uid = $(this).data('uid')
+        var it_deduction_header_name = $(this).data('it_deduction_header_name')
+        var amount_declared = $(this).data('amount_declared')
+        var date_declared = $(this).data('date_declared')
+
+
+        $("#recNum").text(uid)
+        $("#it_deduction_header_name").text(it_deduction_header_name)
+        $("#amount_declared").text(amount_declared)
+        $("#date_declared").text(date_declared)
+
+
+        $('#MyItDeclaration').modal('show');
+
+    });
+
+
+    $('table').on('click','.BranchTypeMaster',function () {
+        var uid = $(this).data('uid')
+        var STATUS = $(this).data('STATUS')
+        var branch_type = $(this).data('branch_type')
+
+
+        $("#recNum").text(uid)
+        $("#STATUS").text(STATUS)
+        $("#branch_type").text(branch_type)
+
+
+        $('#BranchTypeMaster').modal('show');
+
+    });
+
+
+
+    $('table').on('click','.Designation',function () {
+        var uid = $(this).data('uid')
+        var designation = $(this).data('designation')
+
+
+        $("#recNum").text(uid)
+        $("#designation").text(designation)
+
+
+        $('#Designation').modal('show');
+
+    });
+
+
+    $('table').on('click','.UsersDisabledDependents',function () {
+        var uid = $(this).data('uid')
+        var disablity_percentage = $(this).data('disablity_percentage')
+
+
+        $("#recNum").text(uid)
+        $("#disablity_percentage").text(disablity_percentage)
+
+
+        $('#UsersDisabledDependents').modal('show');
+
+    });
+
+    $('table').on('click','.detailClickHrAttendence',function () {
+        $("#dataId1").text($(this).data('data1'));
+        $("#dataId2").text($(this).data('data2'));
+        $("#dataId3").text($(this).data('data3'));
+
+        $('#detailsHrAttendence').modal('show');
+    });
+
+    $('table').on('click','.detailClickServiceCategory',function () {
+        $("#dataId1").text($(this).data('data1'));
+        $("#dataId2").text($(this).data('data2'));
+
+        $('#detailsModal').modal('show');
+    });
+
+    $('table').on('click','.detailClickServiceCenter',function () {
+        $("#dataId1").text($(this).data('data1'));
+        $("#dataId2").text($(this).data('data2'));
+        $("#dataId3").text($(this).data('data3'));
+
+        $('#detailsModal').modal('show');
+    });
+
+    $('table').on('click','.detailClickDelImt',function () {
+        $("#dataId1").text($(this).data('data1'));
+        $("#dataId2").text($(this).data('data2'));
+        $("#dataId3").text($(this).data('data3'));
+
+        $('#detailsModal').modal('show');
+    });
+
+    $('table').on('click','.detailClickPaymentStatus',function () {
+        $("#dataId1").text($(this).data('data1'));
+        $("#dataId2").text($(this).data('data2'));
+
+        $('#detailsModal').modal('show');
+    });
+    $('table').on('click','.detailClickServiceCharge',function () {
+        $("#dataId1").text($(this).data('data1'));
+        $("#dataId2").text($(this).data('data2'));
+        $("#dataId3").text($(this).data('data3'));
+        $("#dataId4").text($(this).data('data4'));
+        $("#dataId5").text($(this).data('data5'));
+
+        $('#detailsModal').modal('show');
+    });
+
+    $('table').on('click','.detailClickServiceGroup',function () {
+        $("#dataId1").text($(this).data('data1'));
+        $("#dataId2").text($(this).data('data2'));
+        $("#dataId3").text($(this).data('data3'));
+        $("#dataId4").text($(this).data('data4'));
+        $("#dataId5").text($(this).data('data5'));
+        $("#dataId6").text($(this).data('data6'));
+
+        $('#detailsModal').modal('show');
+    });
+
+    $('table').on('click','.detailClickServiceDeliverable',function () {
+        $("#dataId1").text($(this).data('data1'));
+        $("#dataId2").text($(this).data('data2'));
+        $("#dataId3").text($(this).data('data3'));
+        $("#dataId4").text($(this).data('data4'));
+        $("#dataId5").text($(this).data('data5'));
+
+        $('#detailsModal').modal('show');
+    });
+
+
+    $('table').on('click','.Earning',function () {
+        var uid = $(this).data('uid')
+        var user_name = $(this).data('user_name')
+        var sh_salary_head_id = $(this).data('sh_salary_head_id')
+        var amount_earned = $(this).data('amount_earned')
+
+
+        $("#recNum").text(uid)
+        $("#user_name").text(user_name)
+        $("#sh_salary_head_id").text(sh_salary_head_id)
+        $("#amount_earned").text(amount_earned)
+
+
+        $('#Earning').modal('show');
+
+    });
+
+    $('table').on('click','.EmploymentType',function () {
+        var uid = $(this).data('uid')
+        var employment_type = $(this).data('employment_type')
+        var STATUS = $(this).data('status')
+
+        $("#recNum").text(uid)
+        $("#STATUS").text(STATUS)
+        $("#employment_type").text(employment_type)
+
+
+        $('#EmploymentType').modal('show');
+
+    });
+
+
+    $('table').on('click','.Family',function () {
+        var uid = $(this).data('uid')
+        var Description = $(this).data('Description')
+
+        $("#recNum").text(uid)
+        $("#Description").text(Description)
+
+
+        $('#Family').modal('show');
 
     });
 
